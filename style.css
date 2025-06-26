@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'franklin';
+    src: url('fonts/franklin-normal-600.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.btn {
+    color: #fff;
+    background-color: #09c909;
+    border: none;
+    padding: .75rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+}
+
+.btn:active {
+    background-color: #089808;
+}
+
+.circle {
+    padding: 2rem;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+}
+
+@media (min-width: 1440px) {
+    .btn {
+        padding: 1rem 1.25rem;
+        font-size: 2rem;
+    }
+}
