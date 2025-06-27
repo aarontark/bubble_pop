@@ -1,5 +1,3 @@
-const circle = document.querySelector('.circle');
-const generateBtn = document.querySelector('.btn');
 const newDiv = document.createElement("div");
 const popSounds = ['./sounds/pop.flac', './sounds/pop1.flac', './sounds/pop2.flac', './sounds/pop3.flac', './sounds/pop6.flac', './sounds/pop7.flac', './sounds/pop8.flac']
 const audio = new Audio('./sounds/pop');
@@ -56,8 +54,4 @@ const createCircle = () => {
 for (let i = 0; i <= 100; i++) {
     createCircle();
 }
-
-generateBtn.addEventListener('click', () => {
-    window.location.reload();
-})
 
