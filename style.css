@@ -7,7 +7,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    z-index: 0;
+    font-family: inherit;
 }
 
 body {
@@ -16,6 +16,7 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btn {
@@ -41,6 +42,53 @@ body {
     cursor: pointer;
     position: absolute;
     top: 0;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000001f;
+}
+
+.content-container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 3rem 2rem;
+    z-index: 1;
+    width: 90%;
+    max-width: 30rem;
+    border-radius: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.time-display {
+    font-size: 1.75rem;
+}
+
+.reload {
+    color: #fff;
+    background-color: #06d106;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem 1.25rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.reload:active {
+    background-color: #049d04;
 }
 
 @media (min-width: 1440px) {
