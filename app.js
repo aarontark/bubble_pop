@@ -1,6 +1,9 @@
+const reloadBtn = document.querySelector('.reload');
+const modal = document.querySelector('.background');
 const timeDisplay = document.querySelector('.time-display');
 const popSounds = ['./sounds/pop.flac', './sounds/pop1.flac', './sounds/pop2.flac', './sounds/pop3.flac', './sounds/pop6.flac', './sounds/pop7.flac', './sounds/pop8.flac']
 const audio = new Audio('./sounds/pop');
+circleCount = 100;
 let seconds = 0;
 let minutes = 0;
 
@@ -30,7 +33,18 @@ function createCoordinates(size, screenWidth, screenHeight) {
 function popCircle(element){
     audio.src = popSounds[Math.floor(Math.random() * 7)]
     audio.play();
+    circleCount--;
     element.remove();
+    if (circleCount == 0) {
+        clearInterval(timer);
+        if (seconds > 9) {
+            timeDisplay.innerHTML = `${minutes}:${seconds}`;
+            
+        } else {
+            timeDisplay.innerHTML = `${minutes}:0${seconds}`
+        }
+        modal.style.display = 'flex';
+    }
 }
 
 const createCircle = () => {
@@ -52,11 +66,11 @@ const createCircle = () => {
     document.body.appendChild(newCircle);
 };
 
-for (let i = 0; i <= 100; i++) {
+for (let i = 0; i < 100; i++) {
     createCircle();
 }
 
-setInterval(() => {
+let timer = setInterval(() => {
     seconds++;
     if (seconds == 60) {
         minutes++;
