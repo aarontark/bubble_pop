@@ -1,6 +1,8 @@
-const newDiv = document.createElement("div");
+const timeDisplay = document.querySelector('.time-display');
 const popSounds = ['./sounds/pop.flac', './sounds/pop1.flac', './sounds/pop2.flac', './sounds/pop3.flac', './sounds/pop6.flac', './sounds/pop7.flac', './sounds/pop8.flac']
 const audio = new Audio('./sounds/pop');
+let seconds = 0;
+let minutes = 0;
 
 function randomNum() {
     return Math.floor(Math.random() * 256);
@@ -22,7 +24,6 @@ function returnOpacity() {
 function createCoordinates(size, screenWidth, screenHeight) {
     let top = Math.random() * (screenHeight - (size * 32));
     let left = Math.random() * (screenWidth - (size * 32));
-    console.log(left, top);
     return [left, top];
 }
 
@@ -54,4 +55,12 @@ const createCircle = () => {
 for (let i = 0; i <= 100; i++) {
     createCircle();
 }
+
+setInterval(() => {
+    seconds++;
+    if (seconds == 60) {
+        minutes++;
+        seconds = 0;
+    }
+}, 1000)
 
