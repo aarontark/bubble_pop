@@ -39,7 +39,7 @@ function popCircle(element){
         clearInterval(timer);
         if (seconds > 9) {
             timeDisplay.innerHTML = `${minutes}:${seconds}`;
-            
+
         } else {
             timeDisplay.innerHTML = `${minutes}:0${seconds}`
         }
@@ -78,3 +78,6 @@ let timer = setInterval(() => {
     }
 }, 1000)
 
+reloadBtn.addEventListener('click', () => {
+    window.location.reload();
+})
